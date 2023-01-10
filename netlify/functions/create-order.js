@@ -11,7 +11,21 @@ exports.handler = async function (event, context) {
   const { data, error } = await supabase
     .from('orders')
     .insert([
-      { requestor : 'Dr. John Doe' },
+      {
+        requestor : 'Dr. John Doe',
+        model_type: 'Heart',
+        status: 'In progress'
+      },
+      {
+        requestor : 'Dr. Jane Doe',
+        model_type: 'Heart',
+        status: 'In progress'
+      },
+      {
+        requestor : 'Dr. John Smith',
+        model_type: 'Heart',
+        status: 'In progress'
+      },
     ]);
 
   console.log(data, error);
