@@ -1,25 +1,40 @@
-<script>
-export default {
-  name: 'OrdersList'
-}
+<script setup>
+import { ref } from 'vue';
+import OrderDetail from '@/components/OrderDetail.vue';
+
+const orders = ref([
+  {
+    id: 1,
+    title: 'first',
+    type: 'heart',
+    orderedBy: 'Dr. No',
+  },
+  {
+    id: 2,
+    title: 'second',
+    type: 'lung',
+    orderedBy: 'Dr. Dolittle',
+  },
+])
 </script>
 
 <template>
   <div class="orders-list">
-
+    <table>
+      <thead>
+        <tr>
+          <td>Title</td>
+          <td>Type</td>
+          <td>Ordered by</td>
+        </tr>
+        <OrderDetail v-for="order in orders" :key="order.id" :order="order" />
+      </thead>
+    </table>
   </div>
 </template>
 
 <style scoped>
-.orders-list {
-  padding: 20px;
-  cursor: pointer;
-  border: 2px solid #39495c;
-  margin: 6px 0px 18px 0px;
-}
-
-.orders-list:hover {
-  transform: scale(1.01);
-  box-shadow: 0 3px 12px 0 rgba(0, 0, 0, 0.2);
+table {
+  width: 100%;
 }
 </style>
