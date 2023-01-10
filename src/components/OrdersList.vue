@@ -11,6 +11,8 @@ onMounted(() => {
   axios.get(GET_ORDERS_URL)
     .then((response) => {
       orders.value = response.data;
+      console.log("the response:")
+      console.log(response)
     })
     .catch((error) => {
       console.log(error)
