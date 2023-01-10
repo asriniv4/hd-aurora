@@ -23,9 +23,9 @@ const orders = ref([
     <table>
       <thead>
         <tr>
-          <td>Title</td>
-          <td>Type</td>
-          <td>Ordered by</td>
+          <td>Requestor</td>
+          <td>Model Type</td>
+          <td>Order Date</td>
         </tr>
         <OrderDetail v-for="order in orders" :key="order.id" :order="order" />
       </thead>

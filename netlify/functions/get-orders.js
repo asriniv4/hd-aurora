@@ -8,11 +8,9 @@ const {
 const supabase = createClient(AURORA_DATABASE_URL, AURORA_DATABASE_SECRET_API_KEY);
 
 exports.handler = async function (event, context) {
-  const { data, error } = await supabase
+  let { data: orders, error } = await supabase
     .from('orders')
-    .insert([
-      { requestor : 'Dr. John Doe' },
-    ]);
+    .select('requestor', 'model_type', 'status')
 
   console.log(data, error);
 
