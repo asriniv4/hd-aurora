@@ -6,4 +6,4 @@ module.exports = defineConfig({
       libraryTarget: 'system',
     }
   }
-})
+});

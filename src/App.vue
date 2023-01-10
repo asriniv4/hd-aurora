@@ -1,15 +1,14 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Aurora Micro Frontend App"/>
+  <OrdersList />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import OrdersList from './components/OrdersList.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    OrdersList
   }
 }
 </script>
@@ -24,3 +23,4 @@ export default {
   margin-top: 60px;
 }
 </style>
+
