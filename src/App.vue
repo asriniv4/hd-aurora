@@ -1,17 +1,17 @@
-<template>
-  <OrdersList />
-</template>
-
 <script>
-import OrdersList from './components/OrdersList.vue';
-
 export default {
   name: 'App',
-  components: {
-    OrdersList
-  }
 }
 </script>
+
+<template>
+  <div class="container">
+    <nav>
+      <RouterLink to="/aurora">Orders List</RouterLink>
+    </nav>
+    <RouterView />
+  </div>
+</template>
 
 <style>
 #app {
