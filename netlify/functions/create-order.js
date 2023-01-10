@@ -9,7 +9,7 @@ const supabase = createClient(AURORA_DATABASE_URL, AURORA_DATABASE_SECRET_API_KE
 
 exports.handler = async event => {
   const { data, error } = await supabase
-    .from('Orders')
+    .from('orders')
     .insert([
       { requestor : 'Dr. John Doe' },
     ]);
