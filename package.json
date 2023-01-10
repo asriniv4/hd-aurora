@@ -9,6 +9,7 @@
     "serve:standalone": "vue-cli-service serve --mode standalone"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.2.3",
     "core-js": "^3.8.3",
     "single-spa-vue": "^2.1.0",
     "systemjs-webpack-interop": "^2.3.7",
