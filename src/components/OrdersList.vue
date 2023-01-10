@@ -10,7 +10,7 @@ const GET_ORDERS_URL = 'https://aurora.ismorebetter.com/.netlify/functions/get-o
 onMounted(() => {
   axios.get(GET_ORDERS_URL)
     .then((response) => {
-      console.log('orders', response.data)
+      orders.value = response.data;
     })
     .catch((error) => {
       console.log(error)
@@ -25,7 +25,7 @@ onMounted(() => {
         <tr>
           <td>Requestor</td>
           <td>Model Type</td>
-          <td>Order Status</td>
+          <td>Status</td>
         </tr>
         <OrderDetail v-for="order in orders" :key="order.id" :order="order" />
       </thead>

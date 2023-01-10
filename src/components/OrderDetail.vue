@@ -9,9 +9,9 @@ defineProps({
 
 <template>
   <tr class="order-detail">
-    <td>{{  order.title }}</td>
-    <td>{{ order.type }}</td>
-    <td>{{ order.orderedBy }}</td>
+    <td>{{ order.requestor }}</td>
+    <td>{{ order.model_type }}</td>
+    <td>{{ order.status }}</td>
   </tr>
 </template>
 
