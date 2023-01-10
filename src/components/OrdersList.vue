@@ -1,21 +1,21 @@
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
+import axios from 'axios';
 import OrderDetail from '@/components/OrderDetail.vue';
 
-const orders = ref([
-  {
-    id: 1,
-    title: 'first',
-    type: 'heart',
-    orderedBy: 'Dr. No',
-  },
-  {
-    id: 2,
-    title: 'second',
-    type: 'lung',
-    orderedBy: 'Dr. Dolittle',
-  },
-])
+const orders = ref(null);
+
+const GET_ORDERS_URL = 'https://aurora.ismorebetter.com/.netlify/functions/get-orders';
+
+onMounted(() => {
+  axios.get(GET_ORDERS_URL)
+    .then((response) => {
+      console.log('orders', response.data)
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+})
 </script>
 
 <template>
@@ -25,7 +25,7 @@ const orders = ref([
         <tr>
           <td>Requestor</td>
           <td>Model Type</td>
-          <td>Order Date</td>
+          <td>Order Status</td>
         </tr>
         <OrderDetail v-for="order in orders" :key="order.id" :order="order" />
       </thead>
