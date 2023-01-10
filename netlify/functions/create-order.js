@@ -5,7 +5,7 @@ const {
   AURORA_DATABASE_SECRET_API_KEY
 } = process.env;
 
-const supabase = createClient(DATABASE_URL, SUPABASE_SERVICE_API_KEY);
+const supabase = createClient(AURORA_DATABASE_URL, AURORA_DATABASE_SECRET_API_KEY);
 
 exports.handler = async event => {
   const { data, error } = await supabase
