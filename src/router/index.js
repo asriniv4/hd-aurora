@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory, isNavigationFailure } from "vue-router";
 import OrdersList from "../components/OrdersList";
 
 const routes = [
@@ -12,6 +12,12 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes
+});
+
+router.afterEach((to, from, failure) => {
+  if (isNavigationFailure(failure)) {
+    console.log('failed navigation', failure);
+  }
 });
 
 export default router;
