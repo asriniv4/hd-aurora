@@ -3,7 +3,7 @@ import OrdersList from "../components/OrdersList";
 
 const routes = [
   {
-    path: '/',
+    path: '/aurora',
     name: 'OrdersList',
     component: OrdersList
   }
