@@ -12,7 +12,7 @@ exports.handler = async function (event, context) {
     .from('orders')
     .select('id, requestor, model_type, status')
     .order('created_at', { ascending: false })
-
+    .limit(3)
   console.log(data, error);
 
   return {

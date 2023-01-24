@@ -29,4 +29,5 @@ export const mount = vueLifecycles.mount;
 export const unmount = vueLifecycles.unmount;
 
 // Expose Components for Cross-SPA Imports
+export { default as OrderDetail } from './components/RecentOrdersList.vue';
 export { default as RecentOrdersList } from './components/RecentOrdersList.vue';

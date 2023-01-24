@@ -4,6 +4,13 @@ module.exports = defineConfig({
   configureWebpack: {
     output: {
       libraryTarget: 'system',
+    },
+    externals: {
+      '@rad/hd-aurora': {
+        commonjs: '@rad/hd-aurora',
+        amd: '@rad/hd-aurora',
+        root: '@rad/hd-aurora',
+      }
     }
   }
 });

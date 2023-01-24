@@ -5,13 +5,12 @@ import OrderDetail from '@/components/OrderDetail.vue';
 
 const orders = ref(null);
 
-const GET_ORDERS_URL = 'https://aurora.ismorebetter.com/.netlify/functions/get-orders';
+const GET_RECENT_ORDERS_URL = 'https://aurora.ismorebetter.com/.netlify/functions/get-recent-orders';
 
 onMounted(() => {
-  axios.get(GET_ORDERS_URL)
+  axios.get(GET_RECENT_ORDERS_URL)
     .then((response) => {
       orders.value = response.data;
-      console.log("the response:")
       console.log(response)
     })
     .catch((error) => {
