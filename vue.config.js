@@ -5,12 +5,6 @@ module.exports = defineConfig({
     output: {
       libraryTarget: 'system',
     },
-    externals: {
-      '@rad/hd-aurora': {
-        commonjs: '@rad/hd-aurora',
-        amd: '@rad/hd-aurora',
-        root: '@rad/hd-aurora',
-      }
-    }
+    externals: ["vue", /^@rad\/.+/]
   }
 });
